@@ -62,8 +62,5 @@ export class MapComponent implements OnInit {
     this.map.setCenter({ lat, lng });
     this.map.setZoom(5);
 
-    // if (this.marker) {
-    //   this.marker.setMap(null);
-    // }
   }
 }
