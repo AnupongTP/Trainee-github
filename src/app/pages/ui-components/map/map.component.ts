@@ -49,9 +49,7 @@ export class MapComponent implements OnInit {
       }
     });
       
-    if (this.marker) {
-      this.marker.setMap(null);
-    }
+   
 
     const position = "หิว";
     const infoWindow = new google.maps.InfoWindow();
@@ -60,7 +58,12 @@ export class MapComponent implements OnInit {
       infoWindow.open(this.map, this.marker);
     });
 
+   
     this.map.setCenter({ lat, lng });
     this.map.setZoom(5);
+
+    // if (this.marker) {
+    //   this.marker.setMap(null);
+    // }
   }
 }
