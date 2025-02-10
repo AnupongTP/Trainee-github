@@ -35,12 +35,15 @@ export class MapComponent implements OnInit {
     const lat = parseFloat(this.latInput.nativeElement.value);
     const lng = parseFloat(this.lngInput.nativeElement.value);
 
+    if (this.marker) {
+      this.marker.setMap(null);
+    }
 
     this.marker = new google.maps.Marker({
       position: { lat, lng },
       map: this.map,
       icon: {
-        path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+        path: google.maps.SymbolPath.CIRCLE,
         scale: 10,
         fillColor: "#FF0000",
         fillOpacity: 1,
@@ -62,5 +65,6 @@ export class MapComponent implements OnInit {
     this.map.setCenter({ lat, lng });
     this.map.setZoom(5);
 
+  
   }
 }
